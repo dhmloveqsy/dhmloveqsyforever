@@ -1,0 +1,426 @@
+version: "4.1"
+name: Task_schduler
+type: ARM
+deviceName: GD32F470VE
+packDir: .pack/GigaDevice/GD32F4xx_DFP.3.0.3
+srcDirs:
+  - build
+virtualFolder:
+  name: <virtual_root>
+  files: []
+  folders:
+    - name: Application
+      files: []
+      folders:
+        - name: MDK-ARM
+          files:
+            - path: MDK-ARM/startup_stm32f429xx.s
+          folders: []
+        - name: User
+          files: []
+          folders:
+            - name: Core
+              files:
+                - path: Core/Src/main.c
+                - path: Core/Src/gpio.c
+                - path: Core/Src/adc.c
+                - path: Core/Src/dac.c
+                - path: Core/Src/dma.c
+                - path: Core/Src/i2c.c
+                - path: Core/Src/spi.c
+                - path: Core/Src/tim.c
+                - path: Core/Src/usart.c
+                - path: Core/Src/stm32f4xx_it.c
+                - path: Core/Src/stm32f4xx_hal_msp.c
+              folders: []
+    - name: Drivers
+      files: []
+      folders:
+        - name: STM32F4xx_HAL_Driver
+          files:
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
+            - path: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
+          folders: []
+        - name: CMSIS
+          files:
+            - path: Core/Src/system_stm32f4xx.c
+          folders: []
+    - name: APP
+      files:
+        - path: APP/schduler.h
+        - path: APP/schduler.c
+        - path: APP/led_app.c
+        - path: APP/led_app.h
+        - path: APP/usart_app.c
+        - path: APP/usart_app.h
+        - path: APP/key_app.h
+        - path: APP/key_app.c
+        - path: APP/adc_app.h
+        - path: APP/adc_app.c
+        - path: APP/dac_app.h
+        - path: APP/dac_app.c
+        - path: APP/btn_app.h
+        - path: APP/btn_app.c
+        - path: APP/oled_app.h
+        - path: APP/oled_app.c
+        - path: APP/u8g2_app.h
+        - path: APP/u8g2_app.c
+        - path: APP/dacc_app.h
+        - path: APP/dacc_app.c
+        - path: APP/flash_app.c
+        - path: APP/flash_app.h
+      folders: []
+    - name: System
+      files:
+        - path: System/mydefine.h
+      folders: []
+    - name: Component
+      files:
+        - path: Component/ebtn/ebtn.h
+        - path: Component/ebtn/bit_array.h
+        - path: Component/ebtn/ebtn.c
+        - path: Component/ringbuffer/ringbuffer.h
+        - path: Component/ringbuffer/ringbuffer.c
+        - path: Component/oled/oled.c
+        - path: Component/oled/oled.h
+        - path: Component/oled/oledfont.h
+        - path: Component/oled/oledpic.h
+      folders:
+        - name: u8g2
+          files:
+            - path: Component/u8g2/mui.c
+            - path: Component/u8g2/mui.h
+            - path: Component/u8g2/mui_u8g2.c
+            - path: Component/u8g2/mui_u8g2.h
+            - path: Component/u8g2/u8g2.h
+            - path: Component/u8g2/u8g2_arc.c
+            - path: Component/u8g2/u8g2_bitmap.c
+            - path: Component/u8g2/u8g2_box.c
+            - path: Component/u8g2/u8g2_buffer.c
+            - path: Component/u8g2/u8g2_button.c
+            - path: Component/u8g2/u8g2_circle.c
+            - path: Component/u8g2/u8g2_cleardisplay.c
+            - path: Component/u8g2/u8g2_d_memory.c
+            - path: Component/u8g2/u8g2_d_setup.c
+            - path: Component/u8g2/u8g2_font.c
+            - path: Component/u8g2/u8g2_fonts.c
+            - path: Component/u8g2/u8g2_hvline.c
+            - path: Component/u8g2/u8g2_input_value.c
+            - path: Component/u8g2/u8g2_intersection.c
+            - path: Component/u8g2/u8g2_kerning.c
+            - path: Component/u8g2/u8g2_line.c
+            - path: Component/u8g2/u8g2_ll_hvline.c
+            - path: Component/u8g2/u8g2_message.c
+            - path: Component/u8g2/u8g2_polygon.c
+            - path: Component/u8g2/u8g2_selection_list.c
+            - path: Component/u8g2/u8g2_setup.c
+            - path: Component/u8g2/u8log.c
+            - path: Component/u8g2/u8log_u8g2.c
+            - path: Component/u8g2/u8log_u8x8.c
+            - path: Component/u8g2/u8x8.h
+            - path: Component/u8g2/u8x8_8x8.c
+            - path: Component/u8g2/u8x8_byte.c
+            - path: Component/u8g2/u8x8_cad.c
+            - path: Component/u8g2/u8x8_capture.c
+            - path: Component/u8g2/u8x8_d_ssd1306_128x32.c
+            - path: Component/u8g2/u8x8_debounce.c
+            - path: Component/u8g2/u8x8_display.c
+            - path: Component/u8g2/u8x8_fonts.c
+            - path: Component/u8g2/u8x8_gpio.c
+            - path: Component/u8g2/u8x8_input_value.c
+            - path: Component/u8g2/u8x8_message.c
+            - path: Component/u8g2/u8x8_selection_list.c
+            - path: Component/u8g2/u8x8_setup.c
+            - path: Component/u8g2/u8x8_string.c
+            - path: Component/u8g2/u8x8_u8toa.c
+            - path: Component/u8g2/u8x8_u16toa.c
+          folders: []
+        - name: WouoUI_page
+          files:
+            - path: Component/WouoUI_Page/WouoUI.c
+            - path: Component/WouoUI_Page/WouoUI.h
+            - path: Component/WouoUI_Page/WouoUI_anim.c
+            - path: Component/WouoUI_Page/WouoUI_anim.h
+            - path: Component/WouoUI_Page/WouoUI_common.h
+            - path: Component/WouoUI_Page/WouoUI_conf.h
+            - path: Component/WouoUI_Page/WouoUI_font.c
+            - path: Component/WouoUI_Page/WouoUI_font.h
+            - path: Component/WouoUI_Page/WouoUI_graph.c
+            - path: Component/WouoUI_Page/WouoUI_graph.h
+            - path: Component/WouoUI_Page/WouoUI_msg.c
+            - path: Component/WouoUI_Page/WouoUI_msg.h
+            - path: Component/WouoUI_Page/WouoUI_page.c
+            - path: Component/WouoUI_Page/WouoUI_page.h
+            - path: Component/WouoUI_Page/WouoUI_user.c
+            - path: Component/WouoUI_Page/WouoUI_user.h
+            - path: Component/WouoUI_Page/WouoUI_win.c
+            - path: Component/WouoUI_Page/WouoUI_win.h
+          folders: []
+        - name: GD25QXX
+          files:
+            - path: Component/GD25QXX/gd25qxx.h
+            - path: Component/GD25QXX/gd25qxx.c
+          folders: []
+    - name: ::CMSIS
+      files: []
+      folders: []
+dependenceList: []
+outDir: build
+miscInfo:
+  uid: ae2a78de1a9226598cbedcb545fb9074
+targets:
+  Task_schduler:
+    cppPreprocessAttrs:
+      defineList:
+        - USE_HAL_DRIVER
+        - STM32F429xx
+        - GD32F470
+      incList:
+        - .
+        - Core/Inc
+        - Drivers/STM32F4xx_HAL_Driver/Inc
+        - Drivers/STM32F4xx_HAL_Driver/Inc/Legacy
+        - Drivers/CMSIS/Device/ST/STM32F4xx/Include
+        - Drivers/CMSIS/Include
+        - System
+        - Component
+        - Component/ebtn
+        - Component/ringbuffer
+        - APP
+        - Component/oled
+        - Component/u8g2
+        - Component/WouoUI_Page
+        - Component/GD25QXX
+        - .cmsis/include
+        - MDK-ARM/RTE/_Task_schduler
+      libList: []
+    excludeList: []
+    settings:
+      debugger: cortex-debug
+    toolchain: AC5
+    toolchainConfigMap:
+      AC5:
+        archExtensions: ""
+        cpuType: Cortex-M4
+        floatingPointHardware: single
+        options:
+          version: 4
+          afterBuildTasks: []
+          asm-compiler:
+            defines: []
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            CXX_FLAGS: --diag_suppress=1 --diag_suppress=1295
+            C_FLAGS: --diag_suppress=1 --diag_suppress=1295
+            c99-mode: true
+            one-elf-section-per-function: true
+            optimization: level-3
+            warnings: no-warnings
+          global:
+            output-debug-info: enable
+            use-microLIB: true
+          linker:
+            $outputTaskExcludes:
+              - .bin
+            misc-controls: --scatter Task_schduler.sct
+            output-format: elf
+            ro-base: ""
+            rw-base: ""
+            xo-base: ""
+        scatterFilePath: ""
+        storageLayout:
+          RAM:
+            - id: 1
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 2
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 3
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 1
+              isChecked: true
+              mem:
+                size: "0x30000"
+                startAddr: "0x20000000"
+              noInit: false
+              tag: IRAM
+            - id: 2
+              isChecked: false
+              mem:
+                size: "0x10000"
+                startAddr: "0x10000000"
+              noInit: false
+              tag: IRAM
+          ROM:
+            - id: 1
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 2
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 3
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 1
+              isChecked: true
+              isStartup: true
+              mem:
+                size: "0x80000"
+                startAddr: "0x8000000"
+              tag: IROM
+            - id: 2
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: IROM
+        useCustomScatterFile: true
+      AC6:
+        archExtensions: ""
+        cpuType: Cortex-M4
+        floatingPointHardware: single
+        options:
+          version: 3
+          afterBuildTasks: []
+          asm-compiler:
+            $use: asm-auto
+            misc-controls: ""
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            language-c: c99
+            language-cpp: c++11
+            link-time-optimization: false
+            optimization: level-0
+          global:
+            output-debug-info: enable
+            use-microLIB: false
+          linker:
+            $outputTaskExcludes:
+              - .bin
+            misc-controls: --diag_suppress=L6329
+            output-format: elf
+        scatterFilePath: <YOUR_SCATTER_FILE>.sct
+        storageLayout:
+          RAM:
+            - id: 1
+              isChecked: true
+              mem:
+                size: "0x5000"
+                startAddr: "0x20000000"
+              noInit: false
+              tag: IRAM
+          ROM:
+            - id: 1
+              isChecked: true
+              isStartup: true
+              mem:
+                size: "0x10000"
+                startAddr: "0x08000000"
+              tag: IROM
+        useCustomScatterFile: false
+      GCC:
+        archExtensions: ""
+        cpuType: Cortex-M4
+        floatingPointHardware: single
+        options:
+          version: 5
+          afterBuildTasks: []
+          asm-compiler:
+            ASM_FLAGS: ""
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            CXX_FLAGS: ""
+            C_FLAGS: ""
+            language-c: c11
+            language-cpp: c++11
+            one-elf-section-per-data: true
+            one-elf-section-per-function: true
+            optimization: level-debug
+            warnings: all-warnings
+          global:
+            $float-abi-type: hard
+            misc-control: ""
+            not-use-syscalls: true
+            output-debug-info: enable
+            use-newlib-nano: true
+          linker:
+            $outputTaskExcludes:
+              - .bin
+            LD_FLAGS: ""
+            LIB_FLAGS: -lm
+            output-format: elf
+            remove-unused-input-sections: true
+        scatterFilePath: <YOUR_LINKER_SCRIPT>.lds
+        storageLayout:
+          RAM: []
+          ROM: []
+        useCustomScatterFile: true
+    uploadConfigMap:
+      JLink:
+        baseAddr: ""
+        bin: ""
+        cpuInfo:
+          cpuName: "null"
+          vendor: "null"
+        otherCmds: ""
+        proType: 1
+        speed: 8000
+      STLink:
+        address: "0x08000000"
+        bin: ""
+        elFile: None
+        optionBytes: .eide/task_schduler.st.option.bytes.ini
+        otherCmds: ""
+        proType: SWD
+        resetMode: default
+        runAfterProgram: true
+        speed: 4000
+    uploader: STLink

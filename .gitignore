@@ -53,3 +53,27 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# STM32 build outputs and local IDE state
+Objects/
+Listings/
+build/
+bin/
+obj/
+out/
+.pack/
+.cache/
+*.axf
+*.crf
+*.lnp
+*.lst
+*.dep
+*.log
+*.build_log.htm
+*.htm
+*.uvguix.*
+*.bak
+*.tmp
+.eide/log/
+.eide.usr.ctx.json
+.vscode/launch.json

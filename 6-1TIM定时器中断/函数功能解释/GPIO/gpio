@@ -1,0 +1,16 @@
+分类,函数名,功能说明 (干什么用的？),学习优先级
+初始化,GPIO_Init,核心函数：配置引脚的模式（输入/输出）、速度、引脚号。,?????
+,GPIO_StructInit,把初始化结构体里的参数恢复成“默认值”，防止配置出错。,???
+,GPIO_DeInit,复位 GPIO 外设，把所有寄存器恢复到刚上电的状态。,??
+写数据,GPIO_SetBits,控制灯亮：将指定引脚设置为高电平。,?????
+(手),GPIO_ResetBits,控制灯灭：将指定引脚设置为低电平。,?????
+,GPIO_WriteBit,指定引脚输出高或低（由参数 BitVal 决定）。,????
+,GPIO_Write,一次性对一整组引脚（16位）写入数据。,??
+读数据,GPIO_ReadInputDataBit,检测按键：读取某个输入引脚现在的电平（0或1）。,?????
+(眼睛),GPIO_ReadInputData,一次性读取整组引脚的输入状态。,??
+,GPIO_ReadOutputDataBit,查看“刚才”你让这个输出引脚输出的是什么电平。,??
+,GPIO_ReadOutputData,读取整组输出引脚的状态。,?
+高级配置,GPIO_PinLockConfig,锁定引脚配置，直到下次复位前都不能再修改。,?
+,GPIO_PinRemapConfig,引脚重映射：把功能（如串口）挪到别的引脚上。,???
+,GPIO_EXTILineConfig,中断配置：设置哪个引脚触发外部中断。,????
+,GPIO_AFIODeInit,复位复用功能（AFIO）的寄存器。,?

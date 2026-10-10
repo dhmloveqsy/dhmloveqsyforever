@@ -1,0 +1,82 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "STM32: Build (Keil)",
+            "type": "process",
+            "command": "powershell.exe",
+            "args": [
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${workspaceFolder}\\.vscode\\keil-task.ps1",
+                "-Action",
+                "build"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}\\MDK-ARM"
+                ],
+                "pattern": {
+                    "regexp": "^(.*)\\((\\d+)\\):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "severity": 3,
+                    "message": 4
+                }
+            }
+        },
+        {
+            "label": "STM32: Rebuild (Keil)",
+            "type": "process",
+            "command": "powershell.exe",
+            "args": [
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${workspaceFolder}\\.vscode\\keil-task.ps1",
+                "-Action",
+                "rebuild"
+            ],
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}\\MDK-ARM"
+                ],
+                "pattern": {
+                    "regexp": "^(.*)\\((\\d+)\\):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "severity": 3,
+                    "message": 4
+                }
+            }
+        },
+        {
+            "label": "STM32: Flash (ST-Link)",
+            "type": "process",
+            "command": "powershell.exe",
+            "args": [
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${workspaceFolder}\\.vscode\\keil-task.ps1",
+                "-Action",
+                "flash"
+            ],
+            "dependsOrder": "sequence",
+            "dependsOn": "STM32: Build (Keil)",
+            "problemMatcher": []
+        }
+    ]
+}

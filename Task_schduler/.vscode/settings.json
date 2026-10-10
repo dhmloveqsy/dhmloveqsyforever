@@ -1,0 +1,5 @@
+{
+    "C_Cpp.errorSquiggles": "disabled",
+    "C_Cpp.intelliSenseEngine": "default",
+    "stm32cube-ide-clangd.enable": false
+}
